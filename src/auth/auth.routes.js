@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { loginUser, logoutUser, registerUser } from "./auth.controller.js";
+import { loginUser, logoutUser, registerUser, renewToken } from "./auth.controller.js";
 import { emailPassValidations, signInValidations } from "./auth.validations.js";
 import fieldValidator from "../middlewares/fields-validator.middleware.js";
 import uniqueEmailMiddleware from "../middlewares/unique-email.middleware.js";
+import jwtMiddleware from "../middlewares/jwt.middleware.js";
 
 const authRoutes = Router();
 
@@ -19,5 +20,7 @@ authRoutes.post(
 );
 
 authRoutes.post("/logout", [], logoutUser);
+
+authRoutes.get("/renew-token", [jwtMiddleware],renewToken);
 
 export default authRoutes;

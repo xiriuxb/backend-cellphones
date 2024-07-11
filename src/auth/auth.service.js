@@ -22,12 +22,24 @@ export const emailPassSignUp = async (registerData) => {
 export const emailPassLogin = async (loginData) => {
   try {
     const user = await findUserByEmail(loginData.email);
-    await compareHash(loginData.password, user.password, responseMessages.notValidCredentials);
+    await compareHash(
+      loginData.password,
+      user.password,
+      responseMessages.notValidCredentials
+    );
     const signedToken = signToken({ id: user.id, email: user.email });
     return {
       token: signedToken,
       user_email: user.email,
     };
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const regenerateToken = (userData) => {
+  try {
+    return signToken({ id: userData.id, user_email: userData.email });
   } catch (error) {
     throw error;
   }
