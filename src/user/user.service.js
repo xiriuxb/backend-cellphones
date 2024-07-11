@@ -1,4 +1,4 @@
-import { User } from "../db/db.service.js";
+import User from "../models/user.model.js";
 import { passwordHash } from "../util/hash.util.js";
 
 export const createUser = async (userData) => {

@@ -3,8 +3,10 @@ import express from "express";
 import { initPgDb } from './db/db.service.js';
 import apiRouter from './routes.js';
 import cookieParser from 'cookie-parser';
+import initModels from './models/initModels.js';
 
 await initPgDb();
+initModels();
 
 const app = express();
 const port = 3000;

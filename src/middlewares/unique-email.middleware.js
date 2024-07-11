@@ -1,5 +1,5 @@
-import { User } from "../db/db.service.js";
 import { validationErrorMessages } from "../langs/reponseMessages.js";
+import User from "../models/user.model.js";
 
 const uniqueEmailMiddleware = async (req, res, next) => {
   try {
