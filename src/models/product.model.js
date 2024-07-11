@@ -11,14 +11,27 @@ const Product = sequelizePg.define(
       primaryKey: true,
     },
     name: {
-      type: DataTypes.STRING(64),
+      type: DataTypes.STRING(128),
       allowNull: false,
       unique: true,
     },
     description: {
-      type: DataTypes.STRING(128),
+      type: DataTypes.STRING(512),
       allowNull: false,
     },
+    is_deleted: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+      allowNull: false,
+    },
+    created_by: {
+      type: DataTypes.UUID,
+      allowNull: true,
+    },
+    updated_by: {
+      type: DataTypes.UUID,
+      allowNull: true,
+    }
   },
   {
     timestamps: true,
