@@ -2,12 +2,14 @@ import 'dotenv/config'
 import express from "express";
 import { initPgDb } from './db/db.service.js';
 import apiRouter from './routes.js';
+import cookieParser from 'cookie-parser';
 
 await initPgDb();
 
 const app = express();
 const port = 3000;
 
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.send("Hello World!");
