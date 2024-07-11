@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { loginUser, registerUser } from "./auth.controller.js";
+import { loginUser, logoutUser, registerUser } from "./auth.controller.js";
 import { emailPassValidations, signInValidations } from "./auth.validations.js";
 import fieldValidator from "../middlewares/fields-validator.middleware.js";
 import uniqueEmailMiddleware from "../middlewares/unique-email.middleware.js";
@@ -13,9 +13,11 @@ authRoutes.post(
 );
 
 authRoutes.post(
-    "/login",
-    [emailPassValidations, fieldValidator],
-    loginUser
-)
+  "/login",
+  [emailPassValidations, fieldValidator],
+  loginUser
+);
+
+authRoutes.post("/logout", [], logoutUser);
 
 export default authRoutes;
