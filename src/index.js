@@ -7,8 +7,8 @@ import initModels from './models/initModels.js';
 import { serve, setup } from 'swagger-ui-express';
 import { swaggerSpecs } from './zwagger/config.swagger.js';
 
-initModels();
 await initPgDb();
+initModels();
 
 const app = express();
 const port = 3000;
