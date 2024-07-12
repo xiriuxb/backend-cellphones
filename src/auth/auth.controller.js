@@ -1,3 +1,4 @@
+import { responseMessages } from "../langs/reponseMessages.js";
 import {
   emailPassLogin,
   emailPassSignUp,
@@ -13,7 +14,7 @@ export const registerUser = async (req, res) => {
     console.log(error);
     return res
       .status(500)
-      .json({ ok: false, message: "Server Error, please try again later." });
+      .json({ ok: false, message: responseMessages.internalServerError });
   }
 };
 
@@ -25,11 +26,11 @@ export const loginUser = async (req, res) => {
   } catch (error) {
     console.log(error);
     if (error.status) {
-      return res.status(error.status).json({ ok: false, message: error.msg });
+      return res.status(error.status).json({ ok: false, message: responseMessages.notValidCredentials });
     }
     return res
       .status(500)
-      .json({ ok: false, message: "Server Error, please try again later." });
+      .json({ ok: false, message: responseMessages.internalServerError });
   }
 };
 
@@ -47,6 +48,6 @@ export const renewToken = (req, res) => {
     console.log(error);
     return res
       .status(500)
-      .json({ ok: false, message: "Server Error, please try again later." });
+      .json({ ok: false, message: responseMessages.internalServerError });
   }
 };

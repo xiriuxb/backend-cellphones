@@ -12,12 +12,12 @@ export const createUser = async (userData) => {
 
 export const findUserByEmail = async (userEmail) => {
   try {
-    const user = await User.findOne();
-    if(!user){
-      throw {status:400, msg:"User not found"}
+    const user = await User.findOne({ where: { email: userEmail } });
+    if (!user) {
+      throw { status: 400, msg: "User not found" };
     }
     return user;
   } catch (error) {
     throw error;
   }
-}
+};
