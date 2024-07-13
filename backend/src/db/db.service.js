@@ -12,7 +12,6 @@ const sequelizePg = new Sequelize(configPgDb.url, {
 
 export const initPgDb = async () => {
   try {
-    await sequelizePg.authenticate();
     return await sequelizePg.sync({ force: false });
   } catch (error) {
     console.log(error);

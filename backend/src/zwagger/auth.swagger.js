@@ -39,8 +39,26 @@ const userRegisterReq = {
   properties: {
     ...loginUserReq.properties,
   },
-  required: ["email", "password", "user_name"],
+  required: ["email", "password"],
 };
+
+const forbiddenResponse = {
+  type: "object",
+  properties: {
+    ok: {
+      type: "boolean",
+      example: false,
+    },
+    message: {
+      type: "string",
+      description: "Error message",
+      examples: [
+        responseMessages.noJwt,
+        responseMessages.invalidJwt,
+      ],
+    },
+  },
+}
 
 const validationErrorRes = {
   type: "object",
@@ -222,23 +240,7 @@ const renewTokenPath = {
         description: "Error when there is no token or it's invalid",
         content: {
           "application/json": {
-            schema: {
-              type: "object",
-              properties: {
-                ok: {
-                  type: "boolean",
-                  example: false,
-                },
-                message: {
-                  type: "string",
-                  description: "Error message",
-                  examples: [
-                    responseMessages.noJwt,
-                    responseMessages.invalidJwt,
-                  ],
-                },
-              },
-            },
+            schema: { $ref: "#/components/schemas/forbiddenResponse"}
           },
         },
       },
@@ -270,6 +272,7 @@ export const authSchemas = {
   validationErrorRes,
   internalServerErrorRes,
   loginFailedLResponse,
+  forbiddenResponse
 };
 
 export const authPaths = {
