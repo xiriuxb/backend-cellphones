@@ -18,3 +18,11 @@ export const findAllProductTypes = async () => {
     throw error;
   }
 };
+
+export const findProductTypeById = async (productTypeId) => {
+  try {
+    return await ProductType.findOne({ where: { id: productTypeId } });
+  } catch (error) {
+    throw error;
+  }
+};

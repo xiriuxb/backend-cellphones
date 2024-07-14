@@ -1,5 +1,5 @@
 import { responseMessages } from "../langs/reponseMessages.js";
-import { createBrand, findAllBrands } from "./brand.service.js";
+import { createBrand, findAllBrands, findBrandById } from "./brand.service.js";
 
 export const getAllBrands = async (req, res) => {
   try {
@@ -21,10 +21,20 @@ export const createNewBrand = async (req, res) => {
   } catch (error) {
     console.log(error);
     if (error.status) {
-      return res
-        .status(error.status)
-        .json({ ok: false, message: error.msg });
+      return res.status(error.status).json({ ok: false, message: error.msg });
     }
+    return res
+      .status(500)
+      .json({ ok: false, message: responseMessages.internalServerError });
+  }
+};
+
+export const getBrandById = async (req, res) => {
+  try {
+    const brandData = await findBrandById(req.params["id"]);
+    return res.status(200).json(brandData);
+  } catch (error) {
+    console.log(error);
     return res
       .status(500)
       .json({ ok: false, message: responseMessages.internalServerError });
