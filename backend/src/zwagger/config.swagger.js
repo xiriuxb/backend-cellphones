@@ -4,6 +4,7 @@ import { authPaths, authSchemas } from './auth.swagger.js';
 import { fileURLToPath } from 'url';
 import { brandPaths, brandSchemas } from './brand.swagger.js';
 import { productTypePaths, productTypeSchemas } from './product-type.swagger.js';
+import { specificationTypePaths, specificationTypeSchemas } from './specification-type.swagger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,6 +21,7 @@ const swaggerDefinition = {
       ...authPaths,
       ...brandPaths,
       ...productTypePaths,
+      ...specificationTypePaths,
     },
     definitions: {},
     components: {
@@ -34,7 +36,8 @@ const swaggerDefinition = {
       schemas: {
         ...authSchemas,
         ...brandSchemas,
-        ...productTypeSchemas
+        ...productTypeSchemas,
+        ...specificationTypeSchemas
       }
     }
   },
