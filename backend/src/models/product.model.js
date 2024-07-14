@@ -19,6 +19,14 @@ const Product = sequelizePg.define(
       type: DataTypes.STRING(128),
       allowNull: false,
     },
+    product_type_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    brand_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     timestamps: true,
