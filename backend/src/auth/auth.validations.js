@@ -6,8 +6,8 @@ export const passwordValidOptions = {
   trim: true,
   notEmpty: { errorMessage: validationErrorMessages.notEmpty },
   isLength: {
-    options: { min: 8, max: 24 },
-    errorMessage: validationErrorMessages.lengthMinMax(8, 24),
+    options: { min: 6, max: 24 },
+    errorMessage: validationErrorMessages.lengthMinMax(6, 24),
   },
 };
 

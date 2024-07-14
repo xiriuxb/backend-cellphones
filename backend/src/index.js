@@ -1,5 +1,6 @@
 import 'dotenv/config'
 import express from "express";
+import cors from "cors";
 import { initPgDb } from './db/db.service.js';
 import apiRouter from './routes.js';
 import cookieParser from 'cookie-parser';
@@ -16,6 +17,7 @@ const port = 3000;
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 app.use(
   "/api-docs",
   serve,
