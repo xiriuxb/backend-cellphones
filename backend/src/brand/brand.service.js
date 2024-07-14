@@ -37,7 +37,7 @@ export const findAllBrands = async () => {
   }
 };
 
-export const findById = async (brandId) => {
+export const findBrandById = async (brandId) => {
   try {
     return await Brand.findOne({ where: { id: brandId } });
   } catch (error) {
