@@ -3,6 +3,7 @@ import swaggerJSDoc from 'swagger-jsdoc';
 import { authPaths, authSchemas } from './auth.swagger.js';
 import { fileURLToPath } from 'url';
 import { brandPaths, brandSchemas } from './brand.swagger.js';
+import { productTypePaths, productTypeSchemas } from './product-type.swagger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,7 +18,8 @@ const swaggerDefinition = {
     tags: [],
     paths: {
       ...authPaths,
-      ...brandPaths
+      ...brandPaths,
+      ...productTypePaths,
     },
     definitions: {},
     components: {
@@ -31,7 +33,8 @@ const swaggerDefinition = {
       },
       schemas: {
         ...authSchemas,
-        ...brandSchemas
+        ...brandSchemas,
+        ...productTypeSchemas
       }
     }
   },
