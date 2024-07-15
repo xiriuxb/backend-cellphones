@@ -11,7 +11,7 @@ const EditProductPage = () => {
   const [product, setProduct] = useState<ProductBase | undefined>();
 
   const getProduct = async () => {
-    console.log(id)
+    console.log(id);
     if (!id) {
       return;
     }
@@ -23,7 +23,7 @@ const EditProductPage = () => {
 
   useEffect(() => {
     getProduct();
-    console.log(product)
+    console.log(product);
   }, []);
 
   if (!isAuth) {
@@ -31,7 +31,9 @@ const EditProductPage = () => {
   }
   return (
     <section className="w-full flex flex-col gap-5 items-center">
-      {product&&<PhoneCreateForm  product={product} onSubmit={apiUpdateProduct}/>}
+      {product && (
+        <PhoneCreateForm product={product} onSubmit={apiUpdateProduct} />
+      )}
     </section>
   );
 };
