@@ -79,7 +79,7 @@ const PhoneCreateForm = ({
 
   return (
     <form onSubmit={handleSubmit(handleCreate)}>
-      <h3>Add Product</h3>
+      <h3>{`${product?.id ? "Update": "Create"} Product`}</h3>
       <ErrorAlertComponent message={stateErrors.error} />
       <SuccessAlertComponent message={stateErrors.success} />
       <div className="w-full mt-4 text-left">

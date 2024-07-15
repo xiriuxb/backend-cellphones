@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import PhoneInfoCard from "../components/phones/PhoneInfoCard";
 import { ApiOkPaginatedResponse, ProductBase } from "../types/api-response";
 import { apiDeleteProduct, apiGetProducts } from "../api/productsApi";
-import HomeSkeleton from "../components/home/HomeSkeleton";
 import { messages } from "../utils/constants";
+import HomeSkeleton from "../components/home/HomeSkeleton";
+import PhoneInfoCard from "../components/phones/PhoneInfoCard";
 
 const HomePage = () => {
   const [productsData, setProductsData] = useState<
@@ -24,6 +24,7 @@ const HomePage = () => {
     if (result) {
       try {
         await apiDeleteProduct(prodId);
+        getProducts();
       } catch (error:any) {
         alert(error.message)
       }
@@ -32,7 +33,7 @@ const HomePage = () => {
 
   useEffect(() => {
     getProducts();
-  }, [productsData]);
+  }, []);
 
   return (
     <section className="w-full flex flex-col gap-5 items-center">

@@ -7,13 +7,15 @@ import { InputCustom } from "../general/InputCustomComponent";
 import {
   emailValidation,
   passwordValidaion,
-} from "../../utils/validationOptions";
+  } from "../../utils/validationOptions";
+import { defaultUser } from "../../utils/constants";
 import ErrorAlertComponent from "../general/ErrorAlertComponent";
 import SumbitButtonComponent from "../general/SubmitButtonComponent";
 
 export default function LogInComponent({ signUpUri = "/auth/register" }) {
   const { register, handleSubmit, formState } = useForm<LoginSignupType>({
     mode: "all",
+    defaultValues: defaultUser,
   });
 
   const [backError, setBackError] = useState("");
@@ -39,15 +41,6 @@ export default function LogInComponent({ signUpUri = "/auth/register" }) {
         <div className="flex flex-col items-center bg-custom-gray px-14 py-8 rounded-lg">
           <h2 className="font-extrabold text-4xl text-left pb-5">User LogIn</h2>
           <ErrorAlertComponent message={backError} />
-          <div>
-            <label htmlFor="user_examples">Example users:</label>
-            <select className="select select-bordered select-xs w-full max-w-xs">
-              <option selected value="user">
-                Normal User
-              </option>
-              <option value="admin">Admin User</option>
-            </select>
-          </div>
           <div className="w-full mt-6 text-left">
             <label className=" w-full" htmlFor="email">
               Email

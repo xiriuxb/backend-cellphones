@@ -27,7 +27,7 @@ const PhoneInfoCard = ({ phoneData, onDelete }: { phoneData: ProductBase, onDele
       onClick={handleViewProdClik}
       className="flex max-w-screen-md w-full gap-6 px-4 py-2 rounded-lg hover:bg-zinc-700/10 hover:shadow-sm transition-all"
     >
-      <img src="/cell_thumb.jpg" alt="" className="h-32 rounded-xl" />
+      <img src={phoneData.image_url ? phoneData.image_url :"/cell_thumb.jpg"} alt="" className="h-32 rounded-xl" />
       <section className="border border-primary-content p-4 rounded-lg shadow-xl flex-1 flex gap-2">
         <div className="content-center text-right">
           <h4 className="text-2xl font-bold">{phoneData.name}</h4>

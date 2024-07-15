@@ -1,6 +1,7 @@
 import ProductLayout from "../layouts/ProductLayout";
 import EditProductPage from "../pages/EditProductPage";
 import HomePage from "../pages/HomePage";
+import ProductControlsPage from "../pages/ProductControlsPage";
 import ProductRegPage from "../pages/ProductListPage";
 import ProductPage from "../pages/ProductPage";
 import ViewProductPage from "../pages/ViewProductPage";
@@ -29,6 +30,10 @@ const homeRoutes = [
       {
         path: "registers",
         element: <ProductRegPage />
+      },
+      {
+        path: "controls",
+        element: <ProductControlsPage />
       }
     ],
   },

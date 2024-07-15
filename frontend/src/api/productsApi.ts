@@ -57,3 +57,21 @@ export const apiGetProductsAdmin = async (deleteds:boolean = true): Promise<ApiO
     axiosErrorHandler(error);
   }
 };
+
+export const generateProdData = async () => {
+  try {
+    const response = await appApi.get(`${PRODUCTS_URI}/a/gen`);
+    return response.data;
+  } catch (error) {
+    axiosErrorHandler(error);
+  }
+}
+
+export const deleteAllProdData = async () => {
+  try {
+    const response = await appApi.get(`${PRODUCTS_URI}/a/del`);
+    return response.data;
+  } catch (error) {
+    axiosErrorHandler(error);
+  }
+}

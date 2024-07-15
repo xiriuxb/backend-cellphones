@@ -14,6 +14,9 @@ const ProductLayout = () => {
             <li>
               <Link to={"/product/registers"}>Registers</Link>
             </li>
+            <li>
+              <Link to={"/product/controls"}>Controls</Link>
+            </li>
           </ul>
         </nav>
       )}

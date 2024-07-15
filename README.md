@@ -20,7 +20,7 @@ Desarrollar una aplicación web para gestionar productos (teléfonos celulares) 
 - ✔Exponer una ruta exclusiva para permitir que clientes externos de la aplicación inserten productos; estas rutas deben utilizar algún tipo de autorización.
 - ✔Exponer servicios externos utilizando Swagger.
 - Crear un procedimiento que permita la eliminación de todos los productos en segundo plano.
-- Crear un procedimiento que permita cargar 50 productos de prueba.
+- ✔Crear un procedimiento que permita cargar 50 productos de prueba.
 
 #### Frontend (React en Vercel):
 
@@ -28,7 +28,7 @@ Desarrollar una aplicación web para gestionar productos (teléfonos celulares) 
 - ✔Crear una interfaz de usuario para mostrar los productos y permitir que el usuario realice operaciones CRUD disponibles solo para usuarios que hayan iniciado sesión.
 - ✔Implementar rutas para navegar entre las diferentes vistas (lista de productos, agregar producto, editar producto, registros).
 - ✔Utilizar servicios para consumir la API RESTful creada en el backend.
-- Al hacer clic en "Cargar productos de prueba" debe añadir 50 productos.
+- ✔Al hacer clic en "Cargar productos de prueba" debe añadir 50 productos.
 - Al hacer clic en "Eliminar todos los productos", ejecutar el procedimiento de eliminación y mostrar una barra de progreso del 0 al 100% que se actualice en tiempo real.
 - ✔Mostrar una lista de los productos eliminados en una pantalla llamada registros dentro del sitio.
 
@@ -41,7 +41,7 @@ Desarrollar una aplicación web para gestionar productos (teléfonos celulares) 
 - ✔Debe ser posible eliminar productos.
 - Añadir funcionalidades de búsqueda y filtrado de productos.
 - ✔Debe ser posible listar los productos de las APIs externas.
-- Debe tener un botón para poder cargar 50 productos.
+- ✔Debe tener un botón para poder cargar 50 productos.
 - Debe tener un botón para poder eliminar todos los productos del sitio.
 - Debe tener una barra de progreso mostrando el estado de la eliminación del 0 al 100%.
 - ✔Debe tener una pantalla llamada registros donde se puedan ver los productos que fueron eliminados.

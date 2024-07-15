@@ -16,6 +16,7 @@ export type ProductBase = {
   id: number;
   name: string;
   description: string;
+  image_url?:string
   Brand: { name: string, id?:number };
   ProductType: { name: string, id?:number };
 };
