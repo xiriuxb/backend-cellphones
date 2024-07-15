@@ -1,24 +1,8 @@
-import { AxiosError } from "axios";
 import { LoginSignupType } from "../components/auth/auth";
 import appApi from "./axios";
+import axiosErrorHandler from "./axiosErrorHandler";
 
 const AUTH_URI = "auth";
-
-type BackFieldValidationError = {
-  msg: string;
-  path: string;
-  value: string;
-};
-
-type BackInternalServerError = {
-  ok: boolean;
-  message: string;
-};
-
-type BackValidationErrors = {
-  ok: boolean;
-  errors: { [field: string]: BackFieldValidationError };
-};
 
 export const apiRegister = async (registerData: LoginSignupType) => {
   try {
@@ -28,14 +12,7 @@ export const apiRegister = async (registerData: LoginSignupType) => {
     );
     return registerResData.data;
   } catch (error) {
-    const data: any = (error as AxiosError).response?.data;
-    if (data.errors) {
-      throw {
-        message: (Object.values(data.errors)[0] as BackFieldValidationError)
-          .msg,
-      };
-    }
-    throw { message: data.message };
+    axiosErrorHandler(error);
   }
 };
 
@@ -44,14 +21,7 @@ export const apiLogin = async (loginData: LoginSignupType) => {
     const data = await appApi.post(`${AUTH_URI}/login`, loginData);
     return data.data;
   } catch (error) {
-    const data: any = (error as AxiosError).response?.data;
-    if (data.errors) {
-      throw {
-        message: (Object.values(data.errors)[0] as BackFieldValidationError)
-          .msg,
-      };
-    }
-    throw { message: data.message };
+    axiosErrorHandler(error);
   }
 };
 
@@ -59,6 +29,6 @@ export const apiLogout = async () => {
   try {
     await appApi.post(`${AUTH_URI}/logout`);
   } catch (error) {
-    throw {message: "Error at logout. Please try again."}
+    throw { message: "Error at logout. Please try again." };
   }
 };

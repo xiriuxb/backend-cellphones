@@ -15,7 +15,7 @@ const NavBarComponent = () => {
   };
 
   return (
-    <div className="navbar bg-base-100">
+    <nav className="navbar bg-base-100 fixed shadow-md">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">{import.meta.env.VITE_APP_NAME}</a>
       </div>
@@ -40,7 +40,7 @@ const NavBarComponent = () => {
           )}
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
