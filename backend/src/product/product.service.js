@@ -115,13 +115,21 @@ export const updateProduct = async (productId, productData) => {
         };
       }
     }
-    await productRelationsValidations(
-      productData.brand_id,
-      productData.product_type_id
-    );
+    if(productData.brand_id && productData.product_type_id){
+      await productRelationsValidations(
+        productData.brand_id,
+        productData.product_type_id
+      );
+    }
     const product = await findProductById(productId);
+    if(!product){
+      throw {
+        status: 400,
+        msg: "Product not found",
+        at: "product.service/create",
+      };
+    }
     await product.update(productData);
-    return { ok: true };
   } catch (error) {
     throw error;
   }
@@ -149,6 +157,14 @@ const productRelationsValidations = async (brandId, productTypeId) => {
     throw error;
   }
 };
+
+export const deleteProduct = async(productId) => {
+  try {
+    await updateProduct(productId, {is_deleted:true});
+  } catch (error) {
+    throw error;
+  }
+}
 
 const limitPaginationQuery = (page, perPage) => {
   const _page = isNaN(page) || page < 1 ? 1 : page;

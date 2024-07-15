@@ -1,6 +1,7 @@
 import { responseMessages } from "../langs/reponseMessages.js";
 import {
   createProduct,
+  deleteProduct,
   findAllProducts,
   findProductById,
   updateProduct,
@@ -54,8 +55,23 @@ export const getProductById = async (req, res) => {
 
 export const updateOldProduct = async (req, res) => {
   try {
-    const product = await updateProduct(req.params.id, req.body);
-    return res.status(200).json({ ok: true, data: product });
+    await updateProduct(req.params.id, req.body);
+    return res.status(200).json({ ok: true });
+  } catch (error) {
+    console.log(error);
+    if (error.status) {
+      return res.status(error.status).json({ ok: false, message: error.msg });
+    }
+    return res
+      .status(500)
+      .json({ ok: false, message: responseMessages.internalServerError });
+  }
+}
+
+export const deleteExistingProduct = async (req, res) => {
+  try {
+    await deleteProduct(req.params.id);
+    return res.status(200).json({ ok: true });
   } catch (error) {
     console.log(error);
     if (error.status) {
