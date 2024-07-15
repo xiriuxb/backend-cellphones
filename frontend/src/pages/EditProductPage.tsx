@@ -27,7 +27,7 @@ const EditProductPage = () => {
   }, []);
 
   if (!isAuth) {
-    return <Navigate to={"/"} replace />;
+    return <Navigate to={`/product/view/${id}`} replace />;
   }
   return (
     <section className="w-full flex flex-col gap-5 items-center">
