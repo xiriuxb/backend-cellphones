@@ -1,5 +1,5 @@
 const serverConfig = {
-    frontUrl: process.env.FRONT_URL || "http://locagost:5173",
+    frontUrl: process.env.FRONT_URL || "https://backend-cellphones.vercel.app/",
 }
 
 export default serverConfig;

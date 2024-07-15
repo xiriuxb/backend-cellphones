@@ -10,9 +10,7 @@ import { swaggerSpecs } from "./zwagger/config.swagger.js";
 import serverConfig from "./config/server.config.js";
 
 initModels();
-initPgDb().then(()=>{
-
-}).catch((error)=>{});
+await initPgDb();
 
 const app = express();
 const port = 3000;
@@ -39,6 +37,7 @@ app.use(
     credentials: true,
   })
 );
+
 app.use("/api-docs", serve, setup(swaggerSpecs, swaggerUiSpecs));
 app.get("/", (req, res) => {
   res.send("Hello World!");
