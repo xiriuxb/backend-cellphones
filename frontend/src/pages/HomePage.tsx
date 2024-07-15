@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import PhoneInfoCard from "../components/phones/PhoneInfoCard";
 import { ApiOkPaginatedResponse, ProductBase } from "../types/api-response";
-import { apiGetProducts } from "../api/productsApi";
+import { apiDeleteProduct, apiGetProducts } from "../api/productsApi";
 import HomeSkeleton from "../components/home/HomeSkeleton";
+import { messages } from "../utils/constants";
 
 const HomePage = () => {
   const [productsData, setProductsData] = useState<
@@ -14,14 +15,24 @@ const HomePage = () => {
     try {
       const responseData = await apiGetProducts();
       setProductsData(responseData);
-      console.log(productsData?.data);
       setLoading(false);
     } catch (error) {}
   };
 
+  const handleDeleteProduct = async (prodId:number) => {
+    const result = window.confirm(messages.deleteConfirm);
+    if (result) {
+      try {
+        await apiDeleteProduct(prodId);
+      } catch (error:any) {
+        alert(error.message)
+      }
+    }
+  };
+
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [productsData]);
 
   return (
     <section className="w-full flex flex-col gap-5 items-center">
@@ -29,7 +40,7 @@ const HomePage = () => {
       {!loading &&
         productsData &&
         productsData.data.map((prod: ProductBase) => {
-          return <PhoneInfoCard phoneData={prod} />;
+          return <PhoneInfoCard phoneData={prod} onDelete={handleDeleteProduct} />;
         })}
     </section>
   );

@@ -40,3 +40,20 @@ export const apiUpdateProduct = async (data:CreateProductBasic, prodId?:number) 
     axiosErrorHandler(error);
   }
 }
+
+export const apiDeleteProduct = async (prodId:number) => {
+  try {
+    await appApi.patch(`${PRODUCTS_URI}/del/${prodId}`);
+  } catch (error) {
+    axiosErrorHandler(error);
+  }
+}
+
+export const apiGetProductsAdmin = async (deleteds:boolean = true): Promise<ApiOkPaginatedResponse<ProductBase> | undefined> => {
+  try {
+    const productsData = (await appApi.get(`${PRODUCTS_URI}/a?del=${deleteds}`)).data as ApiOkPaginatedResponse<ProductBase>;
+    return productsData;
+  } catch (error) {
+    axiosErrorHandler(error);
+  }
+};

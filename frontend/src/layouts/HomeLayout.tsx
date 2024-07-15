@@ -7,7 +7,7 @@ const HomeLayout = () => {
       <header className="w-full absolute content-center">
         <NavBarComponent />
       </header>
-      <div className="pt-24 w-full">
+      <div className="pt-[5.5rem] w-full">
         <Outlet />
       </div>
     </main>

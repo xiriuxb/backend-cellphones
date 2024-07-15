@@ -13,7 +13,8 @@ export const messages = {
   invalidFormat: "Not valid format",
   invalidEmail: "Not valide email",
   productCreated: "Product created",
-  productUpdated: "Product Updated"
+  productUpdated: "Product Updated",
+  deleteConfirm: "Are you shure?"
 };
 
 
