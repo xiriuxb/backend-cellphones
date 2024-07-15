@@ -15,24 +15,12 @@ export const createProduct = async (newProductData) => {
         at: "product.service/create",
       };
     }
-    const brand = await findBrandById(newProductData.brand_id);
-    if (!brand) {
-      throw {
-        status: 400,
-        msg: "Brand not found",
-        at: "product.service/create",
-      };
-    }
-    const productType = await findProductTypeById(
+
+    await productRelationsValidations(
+      newProductData.brand_id,
       newProductData.product_type_id
     );
-    if (!productType) {
-      throw {
-        status: 400,
-        msg: "Product type not found",
-        at: "product.service/create",
-      };
-    }
+
     return await Product.create(newProductData);
   } catch (error) {
     throw error;
@@ -47,6 +35,28 @@ const findProductByName = async (productName) => {
           [Op.iLike]: `${productName}`,
         },
       },
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const findProductById = async (productId, role) => {
+  const whereClause =
+    role === "admin"
+      ? { id: productId }
+      : {
+          id: productId,
+          is_deleted: false,
+        };
+  try {
+    return await Product.findOne({
+      where: whereClause,
+      attributes: ["id", "name", "description"],
+      include: [
+        { model: Brand, attributes: ["name", "id"] },
+        { model: ProductType, attributes: ["name", "id"] },
+      ],
     });
   } catch (error) {
     throw error;
@@ -73,6 +83,68 @@ export const findAllProducts = async (page, perPage) => {
       totalPages: Math.ceil(productsList.count / _perPage),
       currentPage: parseInt(_page),
     };
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateProduct = async (productId, productData) => {
+  try {
+    if (productData.brand_id && productData.name) {
+      const duplicateProduct = await Product.findOne({
+        where: {
+          name: {
+            [Op.iLike]: `${productData.name}`,
+          },
+          id: {
+            [Op.ne]: parseInt(productId),
+          },
+        },
+        include: [
+          {
+            model: Brand,
+            where: { id: productData.brand_id },
+          },
+        ],
+      });
+      if (duplicateProduct) {
+        throw {
+          status: 400,
+          msg: "Duplicate product",
+          at: "product.service/update",
+        };
+      }
+    }
+    await productRelationsValidations(
+      productData.brand_id,
+      productData.product_type_id
+    );
+    const product = await findProductById(productId);
+    await product.update(productData);
+    return { ok: true };
+  } catch (error) {
+    throw error;
+  }
+};
+
+const productRelationsValidations = async (brandId, productTypeId) => {
+  try {
+    const brand = await findBrandById(brandId);
+    if (!brand) {
+      throw {
+        status: 400,
+        msg: "Brand not found",
+        at: "product.service/create",
+      };
+    }
+    const productType = await findProductTypeById(productTypeId);
+    if (!productType) {
+      throw {
+        status: 400,
+        msg: "Product type not found",
+        at: "product.service/create",
+      };
+    }
   } catch (error) {
     throw error;
   }
