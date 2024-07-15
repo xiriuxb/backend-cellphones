@@ -4,7 +4,7 @@ import NavBarComponent from "../components/home/NavBarComponent";
 const HomeLayout = () => {
   return (
     <main className="bg-fondo bg-cover flex justify-center">
-      <header className="text-white w-full h-16 absolute content-center">
+      <header className="w-full absolute content-center">
         <NavBarComponent />
       </header>
       <Outlet />
