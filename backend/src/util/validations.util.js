@@ -11,7 +11,7 @@ export const alphaNumericValidOptions = (min, max, required) => {
       errorMessage: validationErrorMessages.lengthMinMax(min, max),
     },
     matches: {
-      options: /^[a-zA-Z0-9,.:;-_ ]+$/,
+      options: /^[a-zA-Z0-9,.:;-_()áéíóúÁÉÍÓÚñÑ ]+$/,
       errorMessage: validationErrorMessages.general,
     },
   };
@@ -19,13 +19,14 @@ export const alphaNumericValidOptions = (min, max, required) => {
 
 export const intValidOptions = (required, whereIn, min, max) => {
   const _min = min ? min : 1;
+  const _max = max ? max : 999;
   return {
     in: whereIn,
     optional: required ? false : { options: { values: "falsy" } },
-    notEmpty: { errorMessage: validationErrorMessages.notEmpty },
     isInt: {
-      options: { min: _min, max: max },
+      options: { min: _min, max: _max },
       errorMessage: validationErrorMessages.mustBeInt(_min, max),
     },
+    notEmpty: { errorMessage: validationErrorMessages.notEmpty },
   };
 };
