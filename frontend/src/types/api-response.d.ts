@@ -16,6 +16,6 @@ export type ProductBase = {
   id: number;
   name: string;
   description: string;
-  Brand: { name: string };
-  ProductType: { name: string };
+  Brand: { name: string, id?:number };
+  ProductType: { name: string, id?:number };
 };

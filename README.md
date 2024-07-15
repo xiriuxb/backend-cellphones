@@ -36,11 +36,11 @@ Desarrollar una aplicación web para gestionar productos (teléfonos celulares) 
 
 - ✔La aplicación debe tener una página para inicio de sesión y registro. (Proveer un usuario de prueba).
 - La aplicación debe tener una página principal donde todos los productos disponibles y sus detalles sean mostrados; el acceso a esta página es posible solo con el inicio de sesión del usuario.
-- Debe ser posible añadir nuevos productos.
+- ✔Debe ser posible añadir nuevos productos.
 - Debe ser posible editar los productos existentes.
 - Debe ser posible eliminar productos.
 - Añadir funcionalidades de búsqueda y filtrado de productos.
-- Debe ser posible listar los productos de las APIs externas.
+- ✔Debe ser posible listar los productos de las APIs externas.
 - Debe tener un botón para poder cargar 50 productos.
 - Debe tener un botón para poder eliminar todos los productos del sitio.
 - Debe tener una barra de progreso mostrando el estado de la eliminación del 0 al 100%.

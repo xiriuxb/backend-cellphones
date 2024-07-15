@@ -24,7 +24,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <section className="w-full pt-24 flex flex-col gap-5 items-center">
+    <section className="w-full flex flex-col gap-5 items-center">
       {loading && <HomeSkeleton />}
       {!loading &&
         productsData &&

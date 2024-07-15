@@ -3,7 +3,7 @@ const InputErrorMessage = ({ message }: { message: string | undefined }) => {
     <span
       role="alert"
       className={`block text-sm bg-transparent text-red-500 transition-all w-full ${
-        message ? "h-6" : "h-0"
+        message ? "h-2" : "h-0"
       }`}
     >
       {message}

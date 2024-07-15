@@ -1,10 +1,24 @@
+import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../../context/authContext";
 import { ProductBase } from "../../types/api-response";
+import { SyntheticEvent } from "react";
 
-const PhoneInfoCard = ({phoneData}:{phoneData:ProductBase}) => {
+const PhoneInfoCard = ({ phoneData }: { phoneData: ProductBase }) => {
   const { isAuth } = useAuthStore();
+  const navigate = useNavigate();
+
+  const handleEditBtnClick = (e:SyntheticEvent) => {
+    e.stopPropagation();
+    navigate(`/product/${phoneData.id}`);
+  };
+
+  const handleViewProdClik = (e:SyntheticEvent) => {
+    e.stopPropagation();
+    navigate(`/product/view/${phoneData.id}`);
+  }
+
   return (
-    <div className="flex max-w-screen-md w-full gap-6 px-4 py-2 rounded-lg hover:bg-zinc-700/10 hover:shadow-sm transition-all">
+    <div onClick={handleViewProdClik} className="flex max-w-screen-md w-full gap-6 px-4 py-2 rounded-lg hover:bg-zinc-700/10 hover:shadow-sm transition-all">
       <img src="/cell_thumb.jpg" alt="" className="h-32 rounded-xl" />
       <section className="border border-primary-content p-4 rounded-lg shadow-xl flex-1 flex gap-2">
         <div className="content-center text-right">
@@ -13,14 +27,14 @@ const PhoneInfoCard = ({phoneData}:{phoneData:ProductBase}) => {
         </div>
         <div className="divider divider-horizontal m-0 w-2"></div>
         <div className="flex-1">Another info</div>
-        { isAuth && 
+        {isAuth && (
           <div className="flex flex-col gap-1 justify-evenly">
-            <button className="btn btn-outline btn-sm">Editar</button>
+            <button onClick={handleEditBtnClick} className="btn btn-outline btn-sm">Editar</button>
             <button className="btn btn-outline btn-sm btn-error">
               Eliminar
             </button>
           </div>
-        }
+        )}
       </section>
     </div>
   );

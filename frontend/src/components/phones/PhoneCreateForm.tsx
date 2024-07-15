@@ -1,30 +1,36 @@
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { apiGetProductTypes } from "../../api/productsTypeApi";
+import { apiGetBrands } from "../../api/brandsApi";
+import { messages } from "../../utils/constants";
+import { alphaValidation } from "../../utils/validationOptions";
 import { Brand } from "../../types/api-brand";
 import { CreateProductBasic } from "../../types/api-product";
 import { ProductType } from "../../types/api-product-types";
-import { apiGetProductTypes } from "../../api/productsTypeApi";
-import { apiGetBrands } from "../../api/brandsApi";
-import { apiCreateProduct } from "../../api/productsApi";
-import { messages } from "../../utils/constants";
+import { ProductBase } from "../../types/api-response";
 import InputErrorMessage from "../general/InputErrorMessage";
 import ErrorAlertComponent from "../general/ErrorAlertComponent";
 import SuccessAlertComponent from "../general/SuccessAlertComponent";
 import SumbitButtonComponent from "../general/SubmitButtonComponent";
-import { alphaValidation } from "../../utils/validationOptions";
 
 const stateErrorsInitial = {
   success: "",
   error: "",
 };
 
-const PhoneCreateForm = () => {
+const PhoneCreateForm = ({
+  product,
+  onSubmit,
+}: {
+  product?: ProductBase;
+  onSubmit: (data: any, prodId?: number) => void;
+}) => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<CreateProductBasic>({ mode: "all" });
+  } = useForm<CreateProductBasic>({ mode: "all", defaultValues: product });
 
   const [prodTypes, setProdTypes] = useState<ProductType[] | undefined>(
     undefined
@@ -47,13 +53,22 @@ const PhoneCreateForm = () => {
   };
 
   const handleCreate: SubmitHandler<CreateProductBasic> = async (data) => {
-    setStateErrors(stateErrorsInitial);
+    setStateErrors({ ...stateErrorsInitial });
     try {
-      await apiCreateProduct(data);
-      setStateErrors({ ...stateErrors, success: messages.productCreated });
-      reset();
+      if (product?.id) {
+        await onSubmit(data, product.id);
+      } else {
+        await onSubmit(data);
+      }
+      setStateErrors({
+        error: "",
+        success: product?.id ? messages.productUpdated : messages.productCreated,
+      });
+      if(!product?.id){
+        reset();
+      }
     } catch (error: any) {
-      setStateErrors({ ...stateErrors, error: error.message });
+      setStateErrors({ success: "", error: error.message });
     }
   };
 
@@ -64,15 +79,15 @@ const PhoneCreateForm = () => {
 
   return (
     <form onSubmit={handleSubmit(handleCreate)}>
-      <h3>Añádir Producto</h3>
+      <h3>Add Product</h3>
       <ErrorAlertComponent message={stateErrors.error} />
       <SuccessAlertComponent message={stateErrors.success} />
-      <div className="w-full mt-6 text-left">
+      <div className="w-full mt-4 text-left">
         <label className=" w-full" htmlFor="name">
           Name
         </label>
         <input
-          className={`p-2 mt-2 input input-bordered w-full max-w-xs ${
+          className={`mt-1 input input-bordered w-full max-w-xs ${
             errors.name && "border-red-600 border"
           }`}
           type="text"
@@ -84,12 +99,13 @@ const PhoneCreateForm = () => {
         />
         <InputErrorMessage message={errors.name?.message} />
       </div>
-      <div className="w-full mt-6 text-left">
+      <div className="w-full mt-4 text-left">
         <label>Product Type</label>
         {prodTypes && (
           <select
+            defaultValue={product ? product.ProductType.id : ""}
             id="product_type"
-            className={`select select-bordered p-2 mt-2 w-full max-w-xs ${
+            className={`select select-bordered mt-1 w-full max-w-xs ${
               errors.product_type_id && "border-red-600 border"
             }`}
             {...register("product_type_id", {
@@ -97,7 +113,7 @@ const PhoneCreateForm = () => {
               valueAsNumber: true,
             })}
           >
-            <option selected disabled value={""}>
+            <option disabled value={""}>
               -- Type --
             </option>
             {prodTypes?.map((pType: ProductType) => {
@@ -107,12 +123,13 @@ const PhoneCreateForm = () => {
         )}
         <InputErrorMessage message={errors.product_type_id?.message} />
       </div>
-      <div className="w-full mt-6 text-left">
+      <div className="w-full mt-4 text-left">
         <label>Brand</label>
         {brands && (
           <select
+            defaultValue={product ? product.Brand.id : ""}
             id="brand_id"
-            className={`select select-bordered p-2 mt-2 w-full max-w-xs ${
+            className={`select select-bordered mt-1 w-full max-w-xs ${
               errors.brand_id && "border-red-600 border"
             }`}
             {...register("brand_id", {
@@ -120,7 +137,7 @@ const PhoneCreateForm = () => {
               valueAsNumber: true,
             })}
           >
-            <option selected disabled value={""}>
+            <option disabled value={""}>
               -- Brand --
             </option>
             {brands?.map((brnd: Brand) => {
@@ -130,11 +147,11 @@ const PhoneCreateForm = () => {
         )}
         <InputErrorMessage message={errors.brand_id?.message} />
       </div>
-      <div className="w-full mt-6 text-left">
+      <div className="w-full mt-4 text-left">
         <label>Description</label>
         <textarea
           required
-          className={`textarea textarea-bordered p-2 mt-2 w-full max-w-xs ${
+          className={`textarea textarea-bordered mt-1 w-full max-w-xs ${
             errors.description && "border-red-600 border"
           }`}
           placeholder="Description"

@@ -12,7 +12,8 @@ export const messages = {
   tooLong: (max:number) => `Too short, min ${max}`,
   invalidFormat: "Not valid format",
   invalidEmail: "Not valide email",
-  productCreated: "Product created"
+  productCreated: "Product created",
+  productUpdated: "Product Updated"
 };
 
 
