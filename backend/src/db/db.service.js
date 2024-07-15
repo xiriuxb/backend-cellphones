@@ -1,10 +1,12 @@
 import { Sequelize } from "sequelize";
 import { configPgDb } from "../config/db.config.js";
+import pg from 'pg';
 
 const sequelizePg = new Sequelize(configPgDb.url, {
   logging: false,
   native: false,
   dialect: "postgres",
+  dialectModule: pg,
   dialectOptions: {
     ssl: configPgDb.ssl,
   },
