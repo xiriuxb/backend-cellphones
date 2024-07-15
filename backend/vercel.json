@@ -1,9 +1,5 @@
 {
-  "functions": {
-    "/src/index.js": {
-      "memory": 1024
-    }
-  },
+  "rewrites": [{ "source": "/(.*)", "destination": "/src/index.js" }],
   "headers": [
     {
       "source": "/(.*)",
