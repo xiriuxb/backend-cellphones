@@ -1,3 +1,4 @@
+import { CreateProductBasic } from "../types/api-product";
 import { ApiOkPaginatedResponse, ProductBase } from "../types/api-response";
 import appApi from "./axios";
 import axiosErrorHandler from "./axiosErrorHandler";
@@ -12,3 +13,12 @@ export const apiGetProducts = async (): Promise<ApiOkPaginatedResponse<ProductBa
     axiosErrorHandler(error);
   }
 };
+
+export const apiCreateProduct = async (prodData:CreateProductBasic) => {
+  try {
+    const response = (await appApi.post(PRODUCTS_URI,prodData)).data;
+    return response;
+  } catch (error) {
+    axiosErrorHandler(error);
+  }
+}

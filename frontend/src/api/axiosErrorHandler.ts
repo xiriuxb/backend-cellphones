@@ -4,9 +4,9 @@ import { BackFieldValidationError } from "../types/api-error-response";
 const axiosErrorHandler = (error: any) => {
   const errorData: any = (error as AxiosError).response?.data;
   if (errorData && errorData.errors) {
+    const firstField = (Object.values(errorData.errors)[0] as BackFieldValidationError)
     throw {
-      message: (Object.values(errorData.errors)[0] as BackFieldValidationError)
-        .msg,
+      message: `${firstField.path}: ${firstField.msg}`,
     };
   }
   if (errorData && errorData.message) {

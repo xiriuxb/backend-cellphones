@@ -10,14 +10,15 @@ const NavBarComponent = () => {
       await apiLogout();
       localStorage.removeItem("user:auth");
       setIsAuth(false);
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   return (
     <nav className="navbar bg-base-100 fixed shadow-md">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">{import.meta.env.VITE_APP_NAME}</a>
+        <Link to={"/"} className="btn btn-ghost text-xl">
+          {import.meta.env.VITE_APP_NAME}
+        </Link>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
@@ -34,9 +35,14 @@ const NavBarComponent = () => {
             </li>
           )}
           {isAuth && (
-            <li>
-              <button onClick={handleLogout}>Logout</button>
-            </li>
+            <>
+              <li>
+                <Link to={"/product"}>Product</Link>
+              </li>
+              <li>
+                <button onClick={handleLogout}>Logout</button>
+              </li>
+            </>
           )}
         </ul>
       </div>

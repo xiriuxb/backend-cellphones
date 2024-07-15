@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import { LoginSignupType } from "../components/auth/auth";
+import { useAuthStore } from "../context/authContext";
 import appApi from "./axios";
 import axiosErrorHandler from "./axiosErrorHandler";
 
@@ -31,4 +33,21 @@ export const apiLogout = async () => {
   } catch (error) {
     throw { message: "Error at logout. Please try again." };
   }
+};
+
+export const useMyAuth = () => {
+  const { setIsAuth } = useAuthStore();
+  const navigate = useNavigate();
+
+  const onSuccessAuth = () => {
+    setIsAuth(true);
+    navigate("/", { replace: true });
+    localStorage.setItem("user:auth", "true");
+  }
+
+  const onLogout = () => {
+
+  }
+
+  return {onSuccessAuth, onLogout}
 };
