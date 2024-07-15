@@ -10,7 +10,9 @@ import { swaggerSpecs } from "./zwagger/config.swagger.js";
 import serverConfig from "./config/server.config.js";
 
 initModels();
-initPgDb().then();
+initPgDb().then(()=>{
+
+}).catch((error)=>{});
 
 const app = express();
 const port = 3000;
