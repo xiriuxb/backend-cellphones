@@ -63,14 +63,14 @@ export const findProductById = async (productId, role) => {
   }
 };
 
-export const findAllProducts = async (page, perPage) => {
+export const findAllProducts = async (page, perPage, getDeleted=false) => {
   const [_page, _perPage] = limitPaginationQuery(page, perPage);
   try {
     const productsList = await Product.findAndCountAll({
       offset: (_page - 1) * _perPage,
       limit: _perPage,
       order: [["createdAt", "DESC"]],
-      where: { is_deleted: false },
+      where: { is_deleted: getDeleted },
       attributes: ["id", "name", "description"],
       include: [
         { model: Brand, attributes: ["name"] },

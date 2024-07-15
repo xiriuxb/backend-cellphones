@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import initModels from './models/initModels.js';
 import { serve, setup } from 'swagger-ui-express';
 import { swaggerSpecs } from './zwagger/config.swagger.js';
+import serverConfig from './config/server.config.js';
 
 initModels();
 await initPgDb();
@@ -17,7 +18,12 @@ const port = 3000;
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: serverConfig.frontUrl,
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+}));
 app.use(
   "/api-docs",
   serve,

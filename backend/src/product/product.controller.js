@@ -35,6 +35,20 @@ export const getAllProducts = async (req, res) => {
   }
 };
 
+export const getAllProductsAdmin = async (req, res) => {
+  try {
+    const { page, perPage, del } = req.query;
+    const getDel = del === "true";
+    const data = await findAllProducts(page, perPage, getDel);
+    return res.status(200).json({ ok: true, ...data });
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(500)
+      .json({ ok: false, message: responseMessages.internalServerError });
+  }
+};
+
 export const getProductById = async (req, res) => {
   try {
     const product = await findProductById(req.params.id);
@@ -66,7 +80,7 @@ export const updateOldProduct = async (req, res) => {
       .status(500)
       .json({ ok: false, message: responseMessages.internalServerError });
   }
-}
+};
 
 export const deleteExistingProduct = async (req, res) => {
   try {
@@ -81,4 +95,4 @@ export const deleteExistingProduct = async (req, res) => {
       .status(500)
       .json({ ok: false, message: responseMessages.internalServerError });
   }
-}
+};
