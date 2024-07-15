@@ -21,7 +21,8 @@ const ProductRegPage = () => {
   }, []);
 
   return (
-    <div className="overflow-x-auto">
+    <>
+    {!loading && <div className="overflow-x-auto">
       <table className="table">
         {/* head */}
         <thead>
@@ -47,7 +48,8 @@ const ProductRegPage = () => {
             })}
         </tbody>
       </table>
-    </div>
+    </div>}
+    </>
   );
 };
 

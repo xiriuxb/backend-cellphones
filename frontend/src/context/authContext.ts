@@ -11,5 +11,5 @@ export const useAuthStore = create<Store>((set) => ({
     localStorage.getItem("user:auth") == "true"
       ? true
       : false,
-  setIsAuth: (value: boolean) => set((state) => ({ isAuth: value })),
+  setIsAuth: (value: boolean) => set(() => ({ isAuth: value })),
 }));
