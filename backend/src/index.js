@@ -38,12 +38,6 @@ app.use(
   })
 );
 
-app.use(session({
-  cookie: { 
-    secure: true,
-    sameSite: 'none'
-  }
-}));
 app.use("/api-docs", serve, setup(swaggerSpecs, swaggerUiSpecs));
 app.get("/", (req, res) => {
   res.send("Hello World!");
