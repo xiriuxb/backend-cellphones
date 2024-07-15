@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createNewProduct, deleteExistingProduct, getAllProducts, getAllProductsAdmin, getProductById, updateOldProduct } from "./product.controller.js";
+import { createNewProduct, deleteAll, deleteExistingProduct, generateExampleData, getAllProducts, getAllProductsAdmin, getProductById, updateOldProduct } from "./product.controller.js";
 import { createProductValidations, paginationValidations } from "./product.validations.js";
 import fieldValidator from "../middlewares/fields-validator.middleware.js";
 import jwtMiddleware from "../middlewares/jwt.middleware.js";
@@ -7,6 +7,8 @@ import jwtMiddleware from "../middlewares/jwt.middleware.js";
 const productRoutes = Router();
 
 productRoutes.get("/a",[jwtMiddleware], getAllProductsAdmin);
+productRoutes.get("/a/gen", [jwtMiddleware], generateExampleData);
+productRoutes.get("/a/del", [], deleteAll);
 productRoutes.post("/", [createProductValidations, fieldValidator], createNewProduct);
 productRoutes.get("/", [paginationValidations, fieldValidator], getAllProducts);
 productRoutes.get("/:id",[], getProductById);

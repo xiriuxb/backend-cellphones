@@ -27,6 +27,10 @@ const Product = sequelizePg.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    image_url: {
+      type: DataTypes.STRING(512),
+      allowNull: true,
+    },
     is_deleted: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

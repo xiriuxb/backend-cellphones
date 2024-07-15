@@ -1,0 +1,403 @@
+[
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-chromebook-tab-10.jpg",
+    "name": "Chromebook Tab 10",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 3,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-talk-s.jpg",
+    "name": "Iconia Talk S",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z6-plus.jpg",
+    "name": "Liquid Z6 Plus",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z6.jpg",
+    "name": "Liquid Z6",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-tab-10-a3-a40.jpg",
+    "name": "Iconia Tab 10 A3-A40",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 3,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-x2-1.jpg",
+    "name": "Liquid X2",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-jade-2.jpg",
+    "name": "Liquid Jade 2",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-zest-plus-z628.jpg",
+    "name": "Liquid Zest Plus",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-zest.jpg",
+    "name": "Liquid Zest",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-predator-8.jpg",
+    "name": "Predator 8",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-jade-primo-.jpg",
+    "name": "Liquid Jade Primo",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z320-z330.jpg",
+    "name": "Liquid Z330",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z320-z330.jpg",
+    "name": "Liquid Z320",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z630.jpg",
+    "name": "Liquid Z630S",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z630.jpg",
+    "name": "Liquid Z630",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z530.jpg",
+    "name": "Liquid Z530S",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z530.jpg",
+    "name": "Liquid Z530",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-m320-m330.jpg",
+    "name": "Liquid M330",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-m320-m330.jpg",
+    "name": "Liquid M320",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-tab-10-a3-a30-new.png",
+    "name": "Iconia Tab 10 A3-A30",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 3,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-one-8-b1-820.jpg",
+    "name": "Iconia One 8 B1-820",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-a3-20.jpg",
+    "name": "Iconia Tab A3-A20",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 3,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-a3-20.jpg",
+    "name": "Iconia Tab A3-A20FHD",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 3,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-jade-z.jpg",
+    "name": "Liquid Jade Z",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z520.jpg",
+    "name": "Liquid Z520",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z220.jpg",
+    "name": "Liquid Z220",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-m220.jpg",
+    "name": "Liquid M220",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z410.jpg",
+    "name": "Liquid Z410",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-jade-s-s56.jpg",
+    "name": "Liquid Jade S",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z5.jpg",
+    "name": "Liquid Z500",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-x1.jpg",
+    "name": "Liquid X1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-jade.jpg",
+    "name": "Liquid Jade",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-e700.jpg",
+    "name": "Liquid E700",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-e600-1.jpg",
+    "name": "Liquid E600",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z200.jpg",
+    "name": "Liquid Z200",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-tab-8-2014-1.jpg",
+    "name": "Iconia Tab 8 A1-840FHD",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 3,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-tab-7.jpg",
+    "name": "Iconia Tab 7 A1-713",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 3,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-tab-7.jpg",
+    "name": "Iconia Tab 7 A1-713HD",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 3,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-one-7.jpg",
+    "name": "Iconia One 7 B1-730",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-e3-plus.jpg",
+    "name": "Liquid E3 Duo Plus",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-e3-new.jpg",
+    "name": "Liquid E3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z4.jpg",
+    "name": "Liquid Z4",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-b1-721.jpg",
+    "name": "Iconia B1-721",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-tab-b1-720.jpg",
+    "name": "Iconia B1-720",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 3,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/Acer-Iconia-A1-830.jpg",
+    "name": "Iconia A1-830",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z5.jpg",
+    "name": "Liquid Z5",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-s2.jpg",
+    "name": "Liquid S2",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-z3.jpg",
+    "name": "Liquid Z3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-liquid-s1.jpg",
+    "name": "Liquid S1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 1,
+    "brand_id": 1,
+    "is_deleted": false
+  },
+  {
+    "image_url": "https://fdn2.gsmarena.com/vv/bigpic/acer-iconia-a3-a10.jpg",
+    "name": "Iconia Tab A3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "product_type_id": 3,
+    "brand_id": 1,
+    "is_deleted": false
+  }
+]

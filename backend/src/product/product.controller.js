@@ -1,9 +1,12 @@
 import { responseMessages } from "../langs/reponseMessages.js";
+import { loadJSON } from "../util/json-loader.util.js";
 import {
+  bulkCreateProducts,
   createProduct,
   deleteProduct,
   findAllProducts,
   findProductById,
+  softDeleteAllProducts,
   updateProduct,
 } from "./product.service.js";
 
@@ -86,6 +89,37 @@ export const deleteExistingProduct = async (req, res) => {
   try {
     await deleteProduct(req.params.id);
     return res.status(200).json({ ok: true });
+  } catch (error) {
+    console.log(error);
+    if (error.status) {
+      return res.status(error.status).json({ ok: false, message: error.msg });
+    }
+    return res
+      .status(500)
+      .json({ ok: false, message: responseMessages.internalServerError });
+  }
+};
+
+export const generateExampleData = async (req, res) => {
+  try {
+    const data = await loadJSON("../product/product.examples.json");
+    await bulkCreateProducts(data);
+    return res.status(201).json({ ok: true });
+  } catch (error) {
+    console.log(error);
+    if (error.status) {
+      return res.status(error.status).json({ ok: false, message: error.msg });
+    }
+    return res
+      .status(500)
+      .json({ ok: false, message: responseMessages.internalServerError });
+  }
+};
+
+export const deleteAll = async (req, res) => {
+  try {
+    const message = await softDeleteAllProducts();
+    return res.status(201).json({ ok: true, message });
   } catch (error) {
     console.log(error);
     if (error.status) {

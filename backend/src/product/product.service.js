@@ -63,7 +63,7 @@ export const findProductById = async (productId, role) => {
   }
 };
 
-export const findAllProducts = async (page, perPage, getDeleted=false) => {
+export const findAllProducts = async (page, perPage, getDeleted = false) => {
   const [_page, _perPage] = limitPaginationQuery(page, perPage);
   try {
     const productsList = await Product.findAndCountAll({
@@ -71,7 +71,7 @@ export const findAllProducts = async (page, perPage, getDeleted=false) => {
       limit: _perPage,
       order: [["createdAt", "DESC"]],
       where: { is_deleted: getDeleted },
-      attributes: ["id", "name", "description"],
+      attributes: ["id", "name", "description", "image_url"],
       include: [
         { model: Brand, attributes: ["name"] },
         { model: ProductType, attributes: ["name"] },
@@ -115,14 +115,14 @@ export const updateProduct = async (productId, productData) => {
         };
       }
     }
-    if(productData.brand_id && productData.product_type_id){
+    if (productData.brand_id && productData.product_type_id) {
       await productRelationsValidations(
         productData.brand_id,
         productData.product_type_id
       );
     }
     const product = await findProductById(productId);
-    if(!product){
+    if (!product) {
       throw {
         status: 400,
         msg: "Product not found",
@@ -158,13 +158,41 @@ const productRelationsValidations = async (brandId, productTypeId) => {
   }
 };
 
-export const deleteProduct = async(productId) => {
+export const deleteProduct = async (productId) => {
   try {
-    await updateProduct(productId, {is_deleted:true});
+    await updateProduct(productId, { is_deleted: true });
   } catch (error) {
     throw error;
   }
-}
+};
+
+export const bulkCreateProducts = async (jsonContent) => {
+  try {
+    // const firstProd = await Product.findOne({where:{name:jsonContent[0]["name"]}});
+    // if(firstProd){
+    //   throw {status:400, msg:"You already done this", at:"product.service/bulkCreate"}
+    // }
+    await Product.bulkCreate(jsonContent, {
+      ignoreDuplicates: true,
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const softDeleteAllProducts = async () => {
+  try {
+    const [numberOfAffectedRows] = await Product.update(
+      { is_deleted: true },
+      {
+        where: {is_deleted: false},
+      }
+    );
+    return `Se actualizaron ${numberOfAffectedRows} productos.`;
+  } catch (error) {
+    throw(error);
+  }
+};
 
 const limitPaginationQuery = (page, perPage) => {
   const _page = isNaN(page) || page < 1 ? 1 : page;
