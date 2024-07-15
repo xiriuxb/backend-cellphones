@@ -37,7 +37,7 @@ app.use(
     credentials: true,
   })
 );
-app.use("/api-docs", serve, setup(swaggerSpecs));
+app.use("/api-docs", serve, setup(swaggerSpecs, swaggerUiSpecs));
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
