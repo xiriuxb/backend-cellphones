@@ -29,6 +29,14 @@ const swaggerUiSpecs = {
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(
+  cors({
+    origin: serverConfig.frontUrl,
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 
 
 app.use("/api-docs", serve, setup(swaggerSpecs, swaggerUiSpecs));
