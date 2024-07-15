@@ -8,7 +8,7 @@ const productRoutes = Router();
 
 productRoutes.get("/a",[jwtMiddleware], getAllProductsAdmin);
 productRoutes.get("/a/gen", [jwtMiddleware], generateExampleData);
-productRoutes.get("/a/del", [], deleteAll);
+productRoutes.get("/a/del", [jwtMiddleware], deleteAll);
 productRoutes.post("/", [createProductValidations, fieldValidator], createNewProduct);
 productRoutes.get("/", [paginationValidations, fieldValidator], getAllProducts);
 productRoutes.get("/:id",[], getProductById);
